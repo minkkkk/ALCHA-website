@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#fff9f0" />
-  <meta name="description" content="ALCHA is a software studio inspired by the Korean word 알차다. We build simple, thoughtful apps and digital tools that are full of value." />
+  <meta name="description" content="ALCHA creates thoughtful software for everyday life. Explore our growing collection of web, macOS, and Android apps." />
   <link rel="canonical" href="https://alcha.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="alcha — Simple outside. Full of value." />
-  <meta property="og:description" content="Thoughtful little apps, full of value. Discover the story behind ALCHA and what we're building." />
+  <meta property="og:description" content="Real tools, thoughtfully made. Discover ALCHA apps for the web, macOS, and Android." />
   <meta property="og:url" content="https://alcha.app/" />
   <meta property="og:site_name" content="alcha" />
   <title>alcha — Simple outside. Full of value.</title>
@@ -84,29 +84,65 @@
     .status::before { content: ""; background: #f36529; width: 7px; height: 7px; border-radius: 50%; }
     .feature h3 { margin: 22px 0 14px; font-size: clamp(1.85rem,3vw,2.75rem); line-height: 1.14; letter-spacing: -.045em; }
     .feature p { color: var(--muted); font-size: 1.02rem; line-height: 1.75; margin: 0; max-width: 420px; }
-    .feature-visual { background: linear-gradient(140deg,#fff0df,#ffd9bc); display: flex; align-items: center; justify-content: center; position: relative; padding: 42px 20px; overflow: hidden; }
-    .feature-visual::before, .feature-visual::after { content: ""; position: absolute; border: 2px solid rgba(255,255,255,.42); border-radius: 100%; width: 370px; height: 370px; }
-    .feature-visual::before { top: -220px; right: -160px; }
-    .feature-visual::after { bottom: -240px; left: -120px; }
-    .phone { width: 192px; height: 330px; padding: 15px 14px; border: 7px solid #272529; border-radius: 33px; background: #fffdf9; box-shadow: 0 25px 45px rgba(91,42,22,.18); transform: rotate(7deg); position: relative; }
-    .phone::before { content: ""; position: absolute; width: 60px; height: 13px; border-radius: 0 0 10px 10px; background: #272529; top: 0; left: 50%; transform: translateX(-50%); }
-    .preview-top { height: 61px; display: flex; align-items: end; gap: 8px; padding-bottom: 12px; }
-    .preview-top img { width: 39px; height: 39px; }
-    .preview-top .placeholder-title { width: 78px; height: 12px; border-radius: 9px; background: #393132; }
-    .preview-highlight { height: 94px; border-radius: 16px; background: linear-gradient(135deg,#ffb85c,#f36b31); padding: 16px; display: flex; flex-direction: column; justify-content: end; gap: 7px; }
-    .preview-highlight i { width: 75%; height: 9px; border-radius: 9px; background: rgba(255,255,255,.88); }
-    .preview-highlight i:last-child { width: 45%; opacity: .65; }
-    .preview-rows { display: grid; gap: 10px; padding-top: 14px; }
-    .preview-row { display: flex; align-items: center; gap: 9px; }
-    .preview-row b { width: 29px; height: 29px; border-radius: 10px; background: #ffe7cc; flex: 0 0 auto; }
-    .preview-row i { height: 8px; width: 65%; border-radius: 10px; background: #e9e0d6; }
-    .preview-row:nth-child(2) i { width: 85%; }
-    .preview-label { position: absolute; bottom: 22px; right: 20px; font-size: .7rem; color: #7e5341; background: rgba(255,255,255,.8); padding: 7px 10px; border-radius: 99px; }
-    .service-cards { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 17px; margin-top: 17px; }
-    .service-card { padding: 28px 30px; background: #fffdf9; border: 1px solid var(--line); border-radius: 24px; }
-    .service-card h3 { font-size: 1.22rem; letter-spacing: -.025em; margin-bottom: 7px; }
-    .service-card p { color: var(--muted); margin: 0; font-size: .94rem; }
-    .service-glyph { display: grid; place-items: center; width: 41px; height: 41px; margin-bottom: 15px; border-radius: 13px; color: var(--orange-deep); background: #ffe9d6; font-size: 1.2rem; font-weight: 850; }
+
+    /* Product showcase */
+    .apps-section { background: var(--cream); }
+    .feature-app { min-height: 420px; }
+    .feature-app .feature-copy { padding: clamp(30px,5vw,64px); }
+    .feature-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 13px; }
+    .status-live { background: #e9f4e9; color: #266347; }
+    .status-live::before { background: #378b5e; }
+    .platform-label { font-size: .81rem; color: var(--muted); font-weight: 750; letter-spacing: .015em; }
+    .feature-app h3 { margin: 20px 0 13px; font-size: clamp(2.2rem,3.3vw,3.3rem); }
+    .feature-app .feature-copy > p { max-width: 440px; }
+    .feature-actions { margin-top: 26px; }
+    .feature-link { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 20px; border-radius: 999px; color: white; background: var(--ink); font-size: .93rem; font-weight: 800; transition: background .2s ease, transform .2s ease; }
+    .feature-link:hover { background: var(--orange-deep); transform: translateY(-2px); }
+    .feature-link:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+    .feature-visual { position: relative; display: flex; align-items: center; justify-content: center; min-width: 0; padding: 42px 24px; overflow: hidden; isolation: isolate; background: radial-gradient(circle at 73% 15%,#fff2df 0%,transparent 41%),linear-gradient(145deg,#ffdbbf,#f8b98e); }
+    .feature-visual::before { content: ""; position: absolute; width: 410px; height: 410px; border-radius: 50%; border: 2px solid rgba(255,255,255,.45); top: -230px; right: -190px; z-index: -1; }
+    .feature-visual::after { content: ""; position: absolute; width: 330px; height: 330px; border-radius: 50%; border: 2px solid rgba(255,255,255,.4); bottom: -220px; left: -190px; z-index: -1; }
+    .planner-window { width: min(100%,425px); border: 1px solid rgba(255,255,255,.8); border-radius: 19px; overflow: hidden; background: #fffdf8; box-shadow: 0 32px 85px rgba(119,62,31,.2); transform: rotate(-3deg); }
+    .planner-topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 13px 17px; background: #fff9f0; border-bottom: 1px solid #f0e3d7; }
+    .window-dots { display: flex; gap: 5px; }
+    .window-dots i { width: 7px; height: 7px; border-radius: 50%; background: #e6c5ab; }
+    .window-dots i:first-child { background: #f3a378; }
+    .window-title { font-size: .7rem; font-weight: 800; color: #9b7968; letter-spacing: .025em; }
+    .planner-content { padding: 24px 25px 22px; }
+    .planner-kicker { display: block; color: var(--orange-deep); font-size: .62rem; letter-spacing: .15em; font-weight: 850; text-transform: uppercase; }
+    .planner-heading { display: block; max-width: 280px; margin-top: 8px; font-size: 1.4rem; font-weight: 840; letter-spacing: -.055em; line-height: 1.13; }
+    .planner-chart { position: relative; margin-top: 24px; height: 139px; border-bottom: 1px solid #eae0d7; background: repeating-linear-gradient(to bottom,transparent 0,transparent 33px,#f2e9e1 34px,#f2e9e1 35px); }
+    .planner-chart svg { width: 100%; height: 100%; display: block; overflow: visible; }
+    .planner-stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 9px; margin-top: 16px; }
+    .planner-stat { min-height: 51px; padding: 12px 10px; border: 1px solid #efe4d8; border-radius: 11px; background: #fffaf3; }
+    .planner-stat i { display: block; width: 58%; height: 6px; border-radius: 12px; background: #edd5c2; }
+    .planner-stat b { display: block; width: 80%; height: 8px; border-radius: 12px; margin-top: 9px; background: #dcb197; }
+    .planner-stat:nth-child(2) b { background: #efa273; width: 64%; }
+    .planner-stat:nth-child(3) b { background: #d5c5ba; width: 73%; }
+    .preview-label { position: absolute; bottom: 14px; right: 18px; font-size: .68rem; color: #815845; background: rgba(255,255,255,.85); padding: 6px 10px; border-radius: 99px; }
+    .apps-subhead { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 14px; margin: 52px 0 20px; }
+    .apps-subhead h3 { font-size: clamp(1.55rem,2.4vw,2.05rem); letter-spacing: -.045em; line-height: 1.14; margin: 0; }
+    .apps-subhead p { color: var(--muted); font-size: .95rem; margin: 0; max-width: 410px; }
+    .app-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 17px; }
+    .app-card { display: flex; flex-direction: column; min-height: 248px; padding: clamp(22px,3vw,32px); background: var(--paper); border: 1px solid var(--line); border-radius: 26px; transition: border-color .2s ease, transform .2s ease; }
+    .app-card:hover { border-color: #ddbaa3; transform: translateY(-3px); }
+    .app-card-top { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .app-symbol { display: grid; place-items: center; width: 53px; height: 53px; border-radius: 16px; background: #ffe8d4; color: #b64f27; }
+    .app-symbol svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .app-symbol--cashflow { background: #e8f3e7; color: #39764e; }
+    .app-symbol--cards { background: #e6ecfb; color: #4265a1; }
+    .app-symbol--meal { background: #f9e9dc; color: #a9632f; }
+    .app-symbol--snow { background: #e6f3f7; color: #4b849c; }
+    .app-stage { border: 1px solid #e9ded1; color: #7b6b60; padding: 5px 9px; border-radius: 99px; font-size: .7rem; font-weight: 750; line-height: 1.2; background: #fffbf6; }
+    .app-card h4 { font-size: 1.35rem; line-height: 1.16; letter-spacing: -.035em; margin: 20px 0 9px; }
+    .app-card p { color: var(--muted); font-size: .94rem; margin: 0 0 20px; line-height: 1.65; max-width: 430px; }
+    .app-platforms { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+    .app-platforms span { color: #6e615b; background: #f9f1e7; border-radius: 7px; padding: 5px 9px; font-size: .73rem; font-weight: 760; }
+    .platform-panel { display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: 29px clamp(22px,3.5vw,42px); margin-top: 18px; background: #fff0df; border: 1px solid #f1dcc8; border-radius: 25px; }
+    .platform-panel h3 { font-size: clamp(1.3rem,2.1vw,1.8rem); letter-spacing: -.04em; margin: 0 0 5px; }
+    .platform-panel p { font-size: .9rem; color: #756155; margin: 0; max-width: 530px; }
+    .platform-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; justify-content: flex-end; }
+    .platform-tags li { border: 1px solid #ebc5a8; background: #fffaf4; border-radius: 99px; padding: 9px 14px; font-size: .82rem; font-weight: 800; white-space: nowrap; }
     .story { background: var(--ink); color: white; border-radius: 42px 42px 0 0; }
     .story .section-kicker { color: #ffad79; }
     .story-layout { display: grid; grid-template-columns: .96fr 1.04fr; align-items: center; gap: clamp(40px,8vw,110px); }
@@ -185,6 +221,30 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
     }
+
+    @media (max-width: 980px) {
+      .platform-panel { align-items: flex-start; flex-direction: column; }
+      .platform-tags { justify-content: flex-start; }
+    }
+    @media (max-width: 720px) {
+      .feature-app { min-height: 0; }
+      .feature-app .feature-copy { padding: 30px 26px; }
+      .feature-visual { min-height: 338px; padding: 36px 24px; }
+      .planner-window { max-width: 390px; transform: rotate(-2deg); }
+      .apps-subhead { margin-top: 38px; }
+      .app-grid { grid-template-columns: 1fr; gap: 12px; }
+      .app-card { min-height: 0; }
+      .platform-panel { padding: 25px; }
+    }
+    @media (max-width: 390px) {
+      .feature-visual { min-height: 285px; padding: 24px 15px 38px; }
+      .planner-content { padding: 18px 16px 17px; }
+      .planner-heading { font-size: 1.16rem; }
+      .planner-chart { height: 110px; margin-top: 14px; }
+      .planner-stats { margin-top: 11px; }
+      .planner-stat { min-height: 42px; padding: 9px 7px; }
+      .platform-tags li { padding: 8px 12px; }
+    }
   </style>
 </head>
 <body>
@@ -196,7 +256,7 @@
         <span>alcha</span>
       </a>
       <div class="nav-links">
-        <a href="#work">Our work</a>
+        <a href="#work">Our apps</a>
         <a href="#story">Our story</a>
         <a href="#about">Approach</a>
         <a class="nav-contact" href="#contact">Contact ↗</a>
@@ -209,9 +269,9 @@
         <div class="hero-copy">
           <div class="eyebrow"><span class="eyebrow-dot"></span> Independent software studio</div>
           <h1 id="hero-title">Simple outside.<br /><em>Full of value.</em></h1>
-          <p>Inspired by the Korean word <strong>알차다</strong>, alcha makes thoughtful digital products that feel easy to use and meaningful in everyday life.</p>
+          <p>We make thoughtful software for real life — useful web apps, focused macOS tools, and mobile experiences. Simple to use, carefully made.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#work">What we're building <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-primary" href="#work">Explore our apps <span aria-hidden="true">↗</span></a>
             <a class="btn btn-outline" href="#story">The story behind alcha</a>
           </div>
         </div>
@@ -232,43 +292,120 @@
       </div>
     </div>
 
-    <section class="section" id="work" aria-labelledby="work-title">
+    <section class="section apps-section" id="work" aria-labelledby="work-title">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <div class="section-kicker">01 / What we're building</div>
-            <h2 id="work-title">Little apps.<br />Big on thought.</h2>
+            <div class="section-kicker">01 / Our apps</div>
+            <h2 id="work-title">Real tools.<br />Thoughtfully made.</h2>
           </div>
-          <p>We're at the beginning of our journey, exploring small software ideas that can make a real difference in daily routines.</p>
+          <p>From planning ahead to making everyday decisions easier, we're building a growing collection of useful software.</p>
         </div>
 
-        <article class="feature" aria-labelledby="feature-title">
+        <article class="feature feature-app" aria-labelledby="feature-title">
           <div class="feature-copy">
-            <span class="status">In development</span>
-            <h3 id="feature-title">Our first product is taking shape.</h3>
-            <p>Something useful is in the works. We're focused on building a clear, delightful experience — and we'll share more when it's ready.</p>
-          </div>
-          <div class="feature-visual" aria-label="Illustrative mobile app concept">
-            <div class="phone" aria-hidden="true">
-              <div class="preview-top"><img src="assets/alcha-icon.svg" alt="" width="39" height="39" /><div class="placeholder-title"></div></div>
-              <div class="preview-highlight"><i></i><i></i></div>
-              <div class="preview-rows"><div class="preview-row"><b></b><i></i></div><div class="preview-row"><b></b><i></i></div><div class="preview-row"><b></b><i></i></div></div>
+            <div class="feature-meta">
+              <span class="status status-live">Available on the web</span>
+              <span class="platform-label">Web · macOS</span>
             </div>
-            <span class="preview-label">Illustrative concept</span>
+            <h3 id="feature-title">Retirement Planner</h3>
+            <p>Explore what the years ahead could look like. Model retirement scenarios, adjust assumptions, and make sense of your long-term plan.</p>
+            <div class="feature-actions">
+              <a class="feature-link" href="https://retirement.alcha.app/" target="_blank" rel="noopener noreferrer">Explore the web app <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="feature-visual" aria-label="Illustrative Retirement Planner interface">
+            <div class="planner-window" aria-hidden="true">
+              <div class="planner-topbar">
+                <span class="window-dots"><i></i><i></i><i></i></span>
+                <span class="window-title">RETIREMENT PLANNER</span>
+              </div>
+              <div class="planner-content">
+                <span class="planner-kicker">Plan with perspective</span>
+                <strong class="planner-heading">See the bigger picture.</strong>
+                <div class="planner-chart">
+                  <svg viewBox="0 0 340 139" preserveAspectRatio="none" aria-hidden="true">
+                    <defs><linearGradient id="chart-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f5a571" stop-opacity=".4"/><stop offset="1" stop-color="#f5a571" stop-opacity="0"/></linearGradient></defs>
+                    <path d="M0 115 C40 112 52 88 85 90 S136 104 173 68 S220 73 260 39 S310 35 340 11 L340 139 L0 139Z" fill="url(#chart-fill)"/>
+                    <path d="M0 115 C40 112 52 88 85 90 S136 104 173 68 S220 73 260 39 S310 35 340 11" fill="none" stroke="#ea7840" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="260" cy="39" r="5" fill="#ea7840" stroke="#fffdf8" stroke-width="3"/>
+                  </svg>
+                </div>
+                <div class="planner-stats">
+                  <span class="planner-stat"><i></i><b></b></span>
+                  <span class="planner-stat"><i></i><b></b></span>
+                  <span class="planner-stat"><i></i><b></b></span>
+                </div>
+              </div>
+            </div>
+            <span class="preview-label">Illustrative product visual</span>
           </div>
         </article>
 
-        <div class="service-cards">
-          <article class="service-card">
-            <div class="service-glyph" aria-hidden="true">▣</div>
-            <h3>Mobile apps</h3>
-            <p>Purposeful, easy-to-use mobile experiences built around everyday needs.</p>
+        <div class="apps-subhead">
+          <h3>More from ALCHA</h3>
+          <p>Different needs, the same attention to simplicity and detail.</p>
+        </div>
+        <div class="app-grid">
+          <article class="app-card" aria-labelledby="app-cashflow">
+            <div class="app-card-top">
+              <span class="app-symbol app-symbol--cashflow" aria-hidden="true">
+                <svg viewBox="0 0 32 32"><path d="M5 24V17M12 24V11M19 24V15M26 24V6"/><path d="M4 27h24"/></svg>
+              </span>
+              <span class="app-stage">In development</span>
+            </div>
+            <h4 id="app-cashflow">Cashflow</h4>
+            <p>A clearer view of cash flow and net worth, with tools designed to make financial information easier to understand.</p>
+            <div class="app-platforms" aria-label="Platforms"><span>Web</span><span>macOS</span></div>
           </article>
-          <article class="service-card">
-            <div class="service-glyph" aria-hidden="true">✳</div>
-            <h3>Everyday tools</h3>
-            <p>Lightweight software that makes small tasks simpler and more enjoyable.</p>
+
+          <article class="app-card" aria-labelledby="app-cardperk">
+            <div class="app-card-top">
+              <span class="app-symbol app-symbol--cards" aria-hidden="true">
+                <svg viewBox="0 0 32 32"><rect x="4" y="8" width="24" height="17" rx="3"/><path d="M4 14h24M9 20h7"/></svg>
+              </span>
+              <span class="app-stage">In development</span>
+            </div>
+            <h4 id="app-cardperk">CardPerkMeter</h4>
+            <p>Keep track of credit card benefits, understand their value, and make more informed decisions about your cards.</p>
+            <div class="app-platforms" aria-label="Platforms"><span>Web</span><span>macOS</span></div>
           </article>
+
+          <article class="app-card" aria-labelledby="app-meal">
+            <div class="app-card-top">
+              <span class="app-symbol app-symbol--meal" aria-hidden="true">
+                <svg viewBox="0 0 32 32"><path d="M9 5v10M5 5v10M13 5v10M5 11h8M9 15v12M23 5c-6 5-6 13 0 15v7M23 5v15"/></svg>
+              </span>
+              <span class="app-stage">In development</span>
+            </div>
+            <h4 id="app-meal">Meal Shopping List</h4>
+            <p>Plan meals, use what you already have, and turn recipes into a more practical grocery list.</p>
+            <div class="app-platforms" aria-label="Platforms"><span>macOS</span><span>Android</span><span>Web</span></div>
+          </article>
+
+          <article class="app-card" aria-labelledby="app-snow">
+            <div class="app-card-top">
+              <span class="app-symbol app-symbol--snow" aria-hidden="true">
+                <svg viewBox="0 0 32 32"><path d="M16 4v24M5.6 10 26.4 22M5.6 22 26.4 10"/><path d="m12 8 4-4 4 4M12 24l4 4 4-4"/></svg>
+              </span>
+              <span class="app-stage">In development</span>
+            </div>
+            <h4 id="app-snow">SnowPassROI</h4>
+            <p>Make more sense of ski passes, resort choices, and the value of each season on the mountain.</p>
+            <div class="app-platforms" aria-label="Platforms"><span>macOS</span></div>
+          </article>
+        </div>
+
+        <div class="platform-panel" aria-labelledby="platform-title">
+          <div>
+            <h3 id="platform-title">Made for the way you use software.</h3>
+            <p>On the web, at your desk, or on your phone — we build for the platform that makes sense.</p>
+          </div>
+          <ul class="platform-tags" aria-label="Our platforms">
+            <li>Web apps</li>
+            <li>macOS</li>
+            <li>Android</li>
+          </ul>
         </div>
       </div>
     </section>
